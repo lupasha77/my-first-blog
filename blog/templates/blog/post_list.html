@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Django tutorial blog</title>
+</head>
+<body>
+    <header>
+        <h1><a href="/">My Django tutorial Blog</a></h1>
+    </header>
+
+    <article>
+        <time>published: 17.08.2024, 12:14</time>
+        <h2><a href="">My first post</a></h2>
+        <p>## Django: Your Journey to Web Development Mastery
+
+           <h2>Introduction to Django</h2>
+            
+            
+            Django, a high-level Python web framework, has rapidly gained popularity among developers for its efficiency, scalability, and clean design. It's a powerful tool that enables you to build robust web applications with remarkable speed. Whether you're a seasoned Python developer or a complete novice, Django offers a gentle learning curve and a solid foundation for your web development journey.
+            
+            <h2>Why Django? </h2>
+            <p>
+            * **Rapid Development:** Django's emphasis on reusability and pluggability allows you to build applications quickly without sacrificing quality. Its batteries-included approach provides essential components out of the box.
+            * **Scalability:** Django is designed to handle high traffic and complex applications. It can grow with your project, making it suitable for startups and large-scale enterprises alike.
+            * **Security:** Django takes security seriously. It protects against common vulnerabilities like SQL injection, cross-site scripting (XSS), and clickjacking.
+            * **Large Community:** A thriving community of developers contributes to Django's growth and provides extensive support, documentation, and third-party packages.
+            * **Versatility:** Django can be used to build a wide range of applications, from content management systems (CMS) and social networks to e-commerce platforms and data-driven websites.
+            </p>
+            ### Getting Started with Django
+            **Prerequisites:**
+            
+            Before diving into Django, ensure you have a solid understanding of Python programming. Familiarity with core concepts like data structures, functions, object-oriented programming, and basic web concepts will be beneficial.
+            
+            **Installation:**
+            
+            1. **Install Python:** Download and install the latest Python version from [https://www.python.org/](https://www.python.org/).
+            2. **Install Django:** Open your terminal or command prompt and run:
+               ```bash
+               pip install django
+               ```
+            
+            **Creating Your First Django Project:**
+            
+            1. **Create a new project:**
+               ```bash
+               django-admin startproject myproject
+               ```
+               Replace `myproject` with your desired project name.
+            2. **Navigate to the project directory:**
+               ```bash
+               cd myproject
+               ```
+            3. **Start the development server:**
+               ```bash
+               python manage.py runserver
+               ```
+               This will start a local development server, typically at `http://127.0.0.1:8000`.
+            
+            ### Understanding Django's Architecture
+            Django follows the Model-View-Template (MVT) architectural pattern, which is similar to the Model-View-Controller (MVC) pattern.
+            
+            * **Models:** Represent the data structure of your application. They define the fields and relationships between different data objects.
+            * **Views:** Handle the logic of your application. They process requests, interact with models, and return responses.
+            * **Templates:** Define the presentation layer, handling how data is displayed to the user.
+            
+            ### Building Your First App
+            Django encourages the creation of separate apps within a project. This helps organize your code and makes it reusable.
+            
+            1. **Create an app:**
+               ```bash
+               python manage.py startapp myapp
+               ```
+            2. **Define models:** Create Python classes in your app's `models.py` file to represent your data.
+            3. **Create views:** Define functions in your app's `views.py` file to handle requests and process data.
+            4. **Create templates:** Design HTML templates in your app's `templates` directory to display data.
+            5. **Configure URLs:** Map URL patterns to views in your app's `urls.py` file.
+            
+            ### The Power of Django's ORM
+            Django's Object-Relational Mapper (ORM) simplifies database interactions. You can define models as Python classes and perform database operations using Python code. This significantly reduces the complexity of database management.
+            
+            ### Next Steps
+            This introduction provides a foundational overview of Django. To deepen your understanding and build more complex applications, explore the following topics:
+            
+            * **Forms:** Create forms for user input.
+            * **Generic views:** Simplify common view patterns.
+            * **User authentication and authorization:** Implement user management and permissions.
+            * **Templating language:** Master Django's template language for dynamic content generation.
+            * **Testing:** Write unit and integration tests to ensure code quality.
+            * **Deployment:** Learn how to deploy your Django applications to production environments.
+            
+            Remember, practice is key to mastering Django. Start with small projects and gradually increase complexity as you gain confidence. The Django community is a valuable resource, so don't hesitate to seek help and participate in forums and discussions.
+            
+            **In the next part of this series, we will delve deeper into specific Django concepts and build a simple web application together.**
+             
+            **Would you like to focus on a specific aspect of Django in the next part?** 
+            </p>
+    </article>
+
+    {% for post in posts %}
+    <article>
+        <time>published: {{ post.published_date }}</time>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </article>
+{% endfor %}
+        <time>published: 14.06.2014, 12:14</time>
+        <h2><a href="">My second post</a></h2>
+        <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
+    </article>
+</body>
+</html>
